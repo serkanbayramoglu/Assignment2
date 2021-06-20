@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.pojos">
+	<class table="class_table" name="com.pojos.Classes">
+		<id name="ID" column="ID" type="long" >
+			<generator class="identity" />
+		</id>
+		<property name="name" column="className" type="string" />
+		<property name="div" column="classDiv" type="string" />
+		<set name="students" cascade="all">
+			<key column="classId" />
+			<one-to-many class="com.pojos.Students" />
+		</set>
+		<many-to-one name = "year" column = "classYearId" class="ClassYears" not-null="true"/>
+		<set name="assignments" cascade="all">
+			<key column="classId" />
+			<one-to-many class="com.pojos.Assignments" />
+		</set>
+	</class>
+</hibernate-mapping>
+

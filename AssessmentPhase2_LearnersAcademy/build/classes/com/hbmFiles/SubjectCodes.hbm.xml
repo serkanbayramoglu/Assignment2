@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.pojos">
+	<class table="subjects_table" name="com.pojos.SubjectCodes">
+		<id name="ID" column="ID" type="long" >
+			<generator class="increment" />
+		</id>
+		<property name="subjectCode" column="subjectCode" type="string" />
+		<property name="subjectName" column="subjectName" type="string" />
+		<many-to-one name = "classYear" column = "classYearId" class="ClassYears" not-null="true"/>
+		<set name="subjects" cascade="all">
+			<key column="subjectsId" />
+			<one-to-many class="com.pojos.Subjects" />
+		</set>
+		<set name="assignments" cascade="all">
+			<key column="subjectId" />
+			<one-to-many class="com.pojos.Assignments" />
+		</set>
+	</class>
+</hibernate-mapping>

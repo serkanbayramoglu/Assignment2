@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Main Screen</title>
+</head>
+<body>
+
+Please select from the below options</br></br>
+
+<form action = "ActionServlet" method="post">
+	Classes:</br>
+	<input type="submit" name="Classes" value="View"/> 
+	<input type="submit" name="Classes" value="Add"/>
+	<input type="submit" name="Classes" value="Delete"/>
+	</br>Subjects:</br>
+	<input type="submit" name="Subjects" value="View"/> 
+	<input type="submit" name="Subjects" value="Add"/>
+	<input type="submit" name="Subjects" value="Delete"/>
+	<input type="submit" name="Subjects" value="Amend"/>
+	</br>Students:</br>
+	<input type="submit" name="Students" value="View" /> 
+	<input type="submit" name="Students" value="Add"/>
+	<input type="submit" name="Students" value="Delete"/>
+	<input type="submit" name="Students" value="Amend"/>
+	</br>Teachers:</br>
+	<input type="submit" name="Teachers" value="View"/> 
+	<input type="submit" name="Teachers" value="Add"/>
+	<input type="submit" name="Teachers" value="Delete"/>
+	<input type="submit" name="Teachers" value="Amend"/> 
+	</br>Assign  / arrange classes for subjects:</br>
+	<input type="submit" name="Assign Classes" value="Assign"/> 
+	<input type="submit" name="Assign Classes" value="Delete"/> 
+	</br>Assign  / delete teacher to a class for a subject:</br>
+	<input type="submit" name="Assign Teachers" value="Assign/Change"/> 
+	</br>View Class Report (list of students, assigned subjects and assigned teachers for each class):</br>
+	<input type="submit" name="View Class Report" value="View"/> 
+	</form>	
+	<br>
+	<form action = "LogoutServlet" method="post">
+	<input type="submit" name="submit" value="Logout"/> 
+	</form>	
+
+</body>
+</html>

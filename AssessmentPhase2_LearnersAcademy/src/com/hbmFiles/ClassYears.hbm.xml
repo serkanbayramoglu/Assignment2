@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.pojos">
+	<class table="years_table" name="com.pojos.ClassYears">
+		<id name="ClassYearId" column="ID" type="long" >
+			<generator class="identity" />
+		</id>
+		<property name="classYear" column="classYear" type="string" />
+		<set name="Subjects" cascade="all">
+			<key column="classYearId" />
+			<one-to-many class="com.pojos.Subjects" />
+		</set>
+		<set name="Classes" cascade="all">
+			<key column="classYearId" />
+			<one-to-many class="com.pojos.Classes" />
+		</set>
+	</class>
+</hibernate-mapping>
+
+

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.pojos">
+	<class table="assignments" name="com.pojos.Assignments">
+		<id name="ID" column="ID" type="long" >
+			<generator class="identity" />
+		</id>
+		<many-to-one name = "teacherId" column = "teacherId" class="Teachers" not-null="true"/>
+		<many-to-one name = "subjectId" column = "subjectId" class="SubjectCodes" not-null="true"/>
+		<many-to-one name = "classId" column = "classId" class="Classes" not-null="true"/>
+	</class>
+</hibernate-mapping>

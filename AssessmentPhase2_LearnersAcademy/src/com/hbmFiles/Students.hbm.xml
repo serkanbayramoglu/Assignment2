@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.pojos">
+	<class table="students_table" name="com.pojos.Students">
+		<id name="ID" column="ID" type="long">
+			<generator class="identity" />
+		</id>
+		<property name="studentID" column="studentID" type="long" />
+		<property name="nationalID" column="nationalID" type="string" />
+		<property name="studentName" column="studentName" type="string" />
+		<property name="studentSurname" column="studentSurname" type="string" />
+		<property name="studentGender" column="studentGender" type="string" />
+		<property name="birthdate" column="birthdate" type="date" />
+		<property name="entryYear" column="entryYear" type="string" />
+		<many-to-one name = "classID" column = "classID" class="Classes" />
+		
+	</class>
+</hibernate-mapping>

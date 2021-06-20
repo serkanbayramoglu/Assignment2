@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.pojos">
+	<class table="teachers_table" name="com.pojos.Teachers">
+		<id name="ID" column="ID" type="long">
+			<generator class="identity" />
+		</id>
+		<property name="teacherId" column="teacherId" type="long" />
+		<property name="teacherName" column="teacherName" type="string" />
+		<property name="teacherSurname" column="teacherSurname" type="string" />
+		<property name="teacherContact" column="teacherContact" type="string" />
+		<set name="subjects" cascade="all">
+			<key column="teacherId" />
+			<one-to-many class="com.pojos.Subjects" />
+		</set>
+		<set name="assignments" cascade="all">
+			<key column="teacherId" />
+			<one-to-many class="com.pojos.Assignments" />
+		</set>
+	</class>
+</hibernate-mapping>
