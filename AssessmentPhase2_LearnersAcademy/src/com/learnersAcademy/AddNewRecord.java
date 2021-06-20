@@ -197,7 +197,7 @@ public class AddNewRecord extends HttpServlet {
 									// classYear check
 									ClassYears cyCheck = null;
 									cyCheck = (ClassYears) session.createQuery("from ClassYears WHERE classYear = '" + parameters.get("newYear")[0] + "'").uniqueResult();    
-									System.out.println(cyCheck.toString());
+								
 									if (cyCheck != null) {
 										System.out.println("checked");
 										RequestDispatcher rd = getServletContext().getRequestDispatcher("/ActionServlet?Classes=Add" + "&NoteToPrint=Entered new class year already exists. Please try again.");
